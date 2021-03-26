@@ -45,7 +45,7 @@ func main() {
 	}
 
 	// Initialize Handler
-	h := &handler.Handler{}
+	h := &handler.Handler{DB: db}
 
 	// Routes
 	e.POST("/signup", h.Signup)
