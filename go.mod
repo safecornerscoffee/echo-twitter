@@ -1,3 +1,3 @@
-module github.com/safecornerscoffee/twitter-pq
+module github.com/safecornerscoffee/echo-twitter
 
 go 1.15
