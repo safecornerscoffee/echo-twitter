@@ -1,7 +1,21 @@
 version: "3"
 services:
+  postgres:
+    image: postgres:9.6
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "twitter"
+    volumes:
+    - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
   twitter:
     build: .
     ports:
     - "1323:1323"
+    depends_on:
+    - "postgres"
+    env_file:
+    - ".env"
+
     
