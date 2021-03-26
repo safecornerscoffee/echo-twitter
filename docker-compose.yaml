@@ -1,0 +1,7 @@
+version: "3"
+services:
+  twitter:
+    build: .
+    ports:
+    - "1323:1323"
+    
